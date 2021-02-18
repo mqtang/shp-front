@@ -1,10 +1,12 @@
 <template>
-
+    <div id="app">
+        asadsd222323dads
+    </div>
 </template>
 
 <script>
     export default {
-        name: "App.vue"
+        name: "App"
     }
 </script>
 
