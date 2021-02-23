@@ -1,4 +1,4 @@
-# shp-front
+# shp-front (SPA)
 
 ### ESLint
 https://eslint.org/docs/user-guide/getting-started

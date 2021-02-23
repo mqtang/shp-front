@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        asadsd222323dads
+        <router-view/>
     </div>
 </template>
 

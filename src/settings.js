@@ -15,5 +15,11 @@ module.exports = {
      * @type {string}
      * @description email
      */
-    email: 'itangcheng@163.com'
+    email: 'itangcheng@163.com',
+
+    /**
+     * @type {string}
+     * @description github
+     */
+    github: 'https://github.com/mqtang/shp-front.git'
 }
