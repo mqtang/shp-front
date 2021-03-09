@@ -19,6 +19,7 @@ module.exports = {
         hot: true
     },
     configureWebpack: {
+        name: conf.title,
         resolve: {
             alias: {
                 '@': resolve('src')
