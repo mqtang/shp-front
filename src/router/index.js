@@ -6,8 +6,8 @@ Vue.use(Router)
 export const constantRouters = [
     {
         path: '/',
-        name: 'App',
-        component: () => import('@/App')
+        name: 'home',
+        component: () => import('@/views/home/home')
     },
     {
         path: '/login',
