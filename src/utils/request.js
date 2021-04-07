@@ -12,8 +12,8 @@ const service = Axios.create({
 })
 
 service.interceptors.request.use(
-    prepare => {
-        return prepare;
+    config => {
+        return config;
     },
     error => {
         console.log(error)
@@ -22,7 +22,16 @@ service.interceptors.request.use(
 )
 service.interceptors.response.use(
     response => {
-        return response
+        const resp = response.data
+        if (resp.status.code !== 0) {
+            Message({
+                message: resp.status.msg || 'Error',
+                type: 'error',
+                duration: 3 * 1000
+            })
+        } else {
+            return resp
+        }
     },
     error => {
         console.log(error)

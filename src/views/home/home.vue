@@ -12,7 +12,9 @@
     export default {
         name: "home",
         created() {
-            login({id: 123})
+            login({id: 123}).then(response => {
+                console.log(response)
+            })
         },
         methods: {
             login() {
