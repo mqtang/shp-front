@@ -23,19 +23,27 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     response => {
         const resp = response.data
+        // check server status code
         if (resp.status.code !== 0) {
             Message({
                 message: resp.status.msg || 'Error',
                 type: 'error',
-                duration: 3 * 1000
+                duration: 2 * 1000
             })
-        } else {
+            return Promise.reject(new Error(resp.status.msg || 'Error'))
+        }
+        // return api data
+        else {
             return resp
         }
     },
     error => {
-        console.log(error)
-        return Promise.reject(error)
+        Message({
+            message: error.message,
+            type: 'error',
+            duration: 2 * 1000
+        })
+        return Promise.reject(new Error(error.message))
     }
 )
 
