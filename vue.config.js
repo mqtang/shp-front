@@ -13,6 +13,16 @@ module.exports = {
     assetsDir: 'static',
     productionSourceMap: false,
     devServer: {
+        proxy: {
+            '/': {
+                target: 'http://127.0.0.1:8077/',
+                changeOrigin: true,
+                ws: false,
+                pathRewrite: {
+                    '/': ''
+                }
+            }
+        },
         index: 'index.html',
         port: 9190,
         open: true,
