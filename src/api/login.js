@@ -8,3 +8,9 @@ export function login(data) {
     })
 }
 
+export function getIp(query) {
+    return request({
+        method: "GET",
+        url: "/ip"
+    })
+}

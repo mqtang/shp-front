@@ -24,7 +24,7 @@ service.interceptors.response.use(
     response => {
         const resp = response.data
         // check server status code
-        if (resp.status.code !== 0) {
+        if (resp.status.code !== '0') {
             Message({
                 message: resp.status.msg || 'Error',
                 type: 'error',
